@@ -1,10 +1,17 @@
 import { Github, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactCTA() {
   return (
     <section id="contact" className="relative w-full bg-gradient-to-t from-black via-zinc-950 to-black text-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-10 backdrop-blur">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-10 backdrop-blur"
+        >
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 via-sky-500/10 to-violet-500/10" />
           <div className="relative">
             <h2 className="text-3xl font-semibold sm:text-4xl">Let’s build something otherworldly</h2>
@@ -27,7 +34,7 @@ export default function ContactCTA() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <p className="mt-8 text-center text-xs text-white/50">
           © {new Date().getFullYear()} — Crafted with passion and pixels.
